@@ -12,6 +12,7 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
+    Sps::Cat.say_hello('kitty')
     @user = User.new
   end
 
@@ -21,6 +22,7 @@ class UsersController < ApplicationController
 
   # POST /users or /users.json
   def create
+    raise ArgumentError
     @user = User.new(user_params)
 
     respond_to do |format|
